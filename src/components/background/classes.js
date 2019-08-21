@@ -17,9 +17,8 @@ const { getColorClassName } = wp.blockEditor;
 function BackgroundClasses( attributes ) {
 	const backgroundClass = getColorClassName( 'background-color', attributes.backgroundColor );
 	const backgroundSize = attributes.backgroundSize ? attributes.backgroundSize : 'cover';
-
 	return [
-		{ 'has-background': attributes.backgroundColor || attributes.customBackgroundColor },
+		{ 'has-background': attributes.backgroundColor },
 		{ [ backgroundClass ]: backgroundClass },
 		{ 'has-parallax': attributes.backgroundImg && attributes.backgroundType === 'image' && attributes.hasParallax },
 		{ [ `has-background-${ attributes.backgroundType }` ]: attributes.backgroundImg && attributes.backgroundType },

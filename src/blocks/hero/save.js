@@ -32,6 +32,7 @@ const save = ( { attributes } ) => {
 		hasParallax,
 		height,
 	} = attributes;
+	// console.log( attributes );
 
 	const textClass = getColorClassName( 'color', textColor );
 	const backgroundClass = getColorClassName( 'background-color', backgroundColor );
@@ -61,12 +62,14 @@ const save = ( { attributes } ) => {
 		} );
 
 	const innerStyles = {
-		backgroundColor: backgroundClass ? undefined : customBackgroundColor,
+		backgroundColor: backgroundClass ? undefined : backgroundColor,
 		backgroundImage: backgroundImg && backgroundType === 'image' ? `url(${ backgroundImg })` : undefined,
 		color: textColor ? textColor.color : undefined,
 		backgroundPosition: focalPoint && ! hasParallax ? `${ focalPoint.x * 100 }% ${ focalPoint.y * 100 }%` : undefined,
 		minHeight: fullscreen ? undefined : height,
 	};
+
+	// console.log( innerStyles );
 
 	return (
 		<div className={ classes } style={ styles } >

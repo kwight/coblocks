@@ -11,14 +11,12 @@ const { getColorClassName } = wp.blockEditor;
  * @returns {Object} styles.
  */
 const BackgroundStyles = ( attributes, backgroundColor ) => {
-	const backgroundClass = attributes && getColorClassName( 'background-color', attributes.backgroundColor );
-
+	const backgroundClass = attributes && attributes.backgroundColor && getColorClassName( 'background-color', attributes.backgroundColor );
 	const styles = {
 		backgroundImage: attributes.backgroundImg && attributes.backgroundType === 'image' ? `url(${ attributes.backgroundImg })` : undefined,
-		backgroundColor: backgroundClass ? backgroundColor && backgroundColor.color : attributes.customBackgroundColor,
+		backgroundColor: backgroundColor.color,
 		backgroundPosition: attributes.focalPoint && ! attributes.hasParallax ? `${ attributes.focalPoint.x * 100 }% ${ attributes.focalPoint.y * 100 }%` : undefined,
 	};
-
 	return styles;
 };
 

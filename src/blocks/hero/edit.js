@@ -151,6 +151,8 @@ class Edit extends Component {
 			heightMobile,
 		} = attributes;
 
+		console.log( backgroundColor );
+
 		const dropZone = (
 			<BackgroundDropZone
 				{ ...this.props }
@@ -214,6 +216,9 @@ class Edit extends Component {
 				value: ( heightMobile ) ? heightMobile : height,
 			};
 		}
+
+		// console.log( innerStyles );
+		// console.log( innerClasses );
 
 		return (
 			<Fragment>
