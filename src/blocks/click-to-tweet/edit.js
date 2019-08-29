@@ -79,7 +79,7 @@ class Edit extends Component {
 						/* translators: the text of the click to tweet element */
 						placeholder={ __( 'Add a quote to tweet...' ) }
 						value={ content }
-						formattingControls={ [] } // disable controls
+						allowedFormats={ [] }
 						className={ classnames(
 							`${ className }__text`, {
 								'has-text-color': textColor.color,
@@ -106,7 +106,7 @@ class Edit extends Component {
 						multiline="false"
 						placeholder={ __( 'Add button...' ) }
 						value={ buttonText }
-						formattingControls={ [] } // disable controls
+						allowedFormats={ [] }
 						className={ classnames(
 							`${ className }__twitter-btn`, {
 								'has-button-color': buttonColor.color,
