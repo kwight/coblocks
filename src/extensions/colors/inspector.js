@@ -18,7 +18,7 @@ const { createHigherOrderComponent } = wp.compose;
  * @return {Object} Settings for the Settings Sidebar.
  */
 const Inspector = props => {
-	const allowedBlocks = [ 'core/heading', 'core/cover', 'core/button', 'core/list', 'core/quote' ];
+	const allowedBlocks = [ 'core/heading', 'core/button', 'core/list', 'core/quote' ];
 
 	// Display on the allowedBlocks only.
 	if ( ! allowedBlocks.includes( props.name ) ) {
@@ -28,7 +28,7 @@ const Inspector = props => {
 	}
 
 	// Show line height on appropriate blocks.
-	if ( ! [ 'core/heading', 'core/paragraph', 'core/cover', 'core/button' ].includes( props.name ) ) {
+	if ( ! [ 'core/heading', 'core/paragraph', 'core/button' ].includes( props.name ) ) {
 		props.attributes.textPanelLineHeight = true;
 	}
 
